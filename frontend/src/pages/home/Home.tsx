@@ -1,5 +1,5 @@
-import Hero from '../components/Hero';
-import ArticleCards from '../components/ArticleCards';
+import Hero from './Hero';
+import ArticleCards from '../../components/ArticleCards';
 
 const Home = () => (
   <div className='container'>

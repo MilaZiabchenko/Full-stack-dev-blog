@@ -8,7 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { getErrorMessage } from '../utils/getErrorMessage';
 
-const LogIn = () => {
+const SignIn = () => {
   const [inputs, setInputs] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
 
@@ -66,4 +66,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default SignIn;

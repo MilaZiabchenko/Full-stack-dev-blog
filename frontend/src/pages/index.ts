@@ -1,11 +1,13 @@
 import Loading from './Loading';
 import Error from './Error';
-import Home from './Home';
+import Home from './home/Home';
 import Articles from './Articles';
-import Article from './Article';
+import Article from './article/Article';
 import About from './About';
+import WebDeveloper from './resume/WebDeveloper';
+import Interpreter from './resume/Interpreter';
 import SignUp from './SignUp';
-import LogIn from './LogIn';
+import SignIn from './SignIn';
 import NotFound from './NotFound';
 
 export {
@@ -15,7 +17,9 @@ export {
   Articles,
   Article,
   About,
+  WebDeveloper,
+  Interpreter,
   SignUp,
-  LogIn,
+  SignIn,
   NotFound
 };

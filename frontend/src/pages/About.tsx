@@ -4,10 +4,11 @@ const About = () => (
   <section className='container'>
     <h1>About Me</h1>
     <p>
-      My name is <strong>Mila Ziabchenko</strong> 😊 I'm a passionate web
-      developer who creates applications with HTML, CSS, JavaScript, TypeScript,
-      React.js, Node.js, Express.js, GraphQL, MongoDB, Firebase, and other
-      modern technologies and tools.
+      My name is <strong>Mila Ziabchenko</strong> 😊 I'm a{' '}
+      <Link to='/resume/web-developer'>passionate web developer</Link> who
+      creates applications with HTML, CSS, JavaScript, TypeScript, React.js,
+      Node.js, Express.js, GraphQL, MongoDB, Firebase, and other modern
+      technologies and tools.
     </p>
     <p>
       I'm constantly improving my programming and problem solving skills,
@@ -25,23 +26,25 @@ const About = () => (
       try to deliver the best user experience possible.
     </p>
     <p>
-      In <Link to='/articles'>my articles</Link> written for this blog
-      dedicated to the web development, I'd like to share a little bit of my
-      knowledge with fellow dev nerds and would be glad to receive their
-      constructive and friendly feedback 😉
+      In <Link to='/articles'>my articles</Link> written for this blog dedicated
+      to the web development, I'd like to share a little bit of my knowledge
+      with fellow dev nerds and would be glad to receive their constructive and
+      friendly feedback 😉
     </p>
     <p>
-      I have also worked as an interpreter of Italian, Spanish and English
-      languages, primarily in the realm of international adoptions in Ukraine,
-      helping Ukrainian orphan children to join loving families from foreign
-      countries.
+      I have also worked as an{' '}
+      <Link to='/resume/interpreter'>
+        interpreter of Italian, Spanish and English languages
+      </Link>
+      , primarily in the realm of international adoptions in Ukraine, helping
+      Ukrainian orphan children to join loving families from foreign countries.
     </p>
     <p>
       My first job was a teacher of Italian as a foreign language at the First
       State Kyiv Foreign Languages Courses.
     </p>
     <p>
-      My other interests include (but not limited to) spending time with my
+      My other interests include (but are not limited to) spending time with my
       loved ones; communicating with kind and interesting people; walking,
       hiking, biking, swimming, traveling; learning new things, especially
       related to cognitive, social and other sciences.

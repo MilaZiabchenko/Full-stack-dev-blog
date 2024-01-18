@@ -5,10 +5,10 @@ import {
   useState
 } from 'react';
 import axios from 'axios';
-import useUser from '../hooks/useUser';
-import type { ArticleData } from '../data/articles-data';
-import type { ArticleInfo } from '../pages/Article';
-import { getAxiosErrorMessage } from '../utils/getAxiosErrorMessage';
+import useUser from '../../hooks/useUser';
+import type { ArticleData } from '../../data/articles-data';
+import type { ArticleInfo } from './Article';
+import { getAxiosErrorMessage } from '../../utils/getAxiosErrorMessage';
 
 type AddCommentFormProps = {
   articleName: ArticleData['name'];
@@ -72,7 +72,6 @@ const CommentForm = ({ articleName, onAddedComment }: AddCommentFormProps) => {
       className='add-comment-form'
     >
       <h3>Add a Comment</h3>
-      {error && <p className='error'>{error}</p>}
       <div>
         <label>
           Name:
@@ -96,6 +95,7 @@ const CommentForm = ({ articleName, onAddedComment }: AddCommentFormProps) => {
           ></textarea>
         </label>
       </div>
+      {error && <p className='error'>{error}</p>}
       <button type='submit'>Add Comment</button>
     </form>
   );

@@ -6,19 +6,20 @@
   --intense: 100%;
   --primary-red: hsl(var(--red-hue), var(--intense), 55%);
   --secondary-red: hsl(var(--red-hue), var(--intense), 58%);
+  --red-btn: hsla(var(--red-hue), var(--intense), 55%, 0.95);
   --light-color: hsl(var(--blue-hue), 30%, 95%);
-  --light-tr-color: hsla(var(--blue-hue), 30%, 95%, 0.5);
+  --light-tr-color: hsla(var(--blue-hue), 30%, 95%, 0.48);
   --dark-blue-10: hsl(var(--blue-hue), 15%, 10%);
   --dark-blue-12: hsl(var(--blue-hue), 15%, 12%);
   --dark-blue-15: hsl(var(--blue-hue), 15%, 15%);
   --dark-blue-20: hsl(var(--blue-hue), 15%, 20%);
-  --dark-blue-25: hsl(var(--blue-hue), 15%, 25%);
-  --dark-blue-30: hsl(var(--blue-hue), 5%, 30%);
+  --dark-blue-22-5: hsl(var(--blue-hue), 15%, 22.5%);
+  --dark-blue-35: hsl(var(--blue-hue), 5%, 35%);
   --light-blue-50: hsla(var(--blue-hue), 15%, 50%, 0.5);
-  --light-blue-75: hsl(var(--blue-hue), var(--intense), 75%);
   --light-blue-80: hsl(var(--blue-hue), var(--intense), 80%);
   --light-blue-85: hsl(var(--blue-hue), var(--intense), 85%);
-  --light-blue-background: hsla(var(--blue-hue), var(--intense), 80%, 0.05);
+  --light-blue-90: hsl(var(--blue-hue), var(--intense), 90%);
+  --light-blue-background: hsla(var(--blue-hue), var(--intense), 80%, 0.038);
 }
 
 ::-webkit-scrollbar {
@@ -32,13 +33,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--dark-blue-25);
+  background-color: var(--dark-blue-20);
   border: 0.2rem solid var(--dark-blue-10);
   border-radius: 100vw;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--light-blue-50);
+  background-color: var(--dark-blue-22-5);
 }
 
 ::selection {
@@ -52,68 +53,91 @@
 }
 
 body {
-  min-height: 100vh;
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.1375rem;
+  font-size: 1.175rem;
   font-weight: 600;
   line-height: 1.5;
   background-color: var(--dark-blue-10);
   color: var(--light-color);
 }
 
+.full-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 a,
 a:is(:link, :visited),
 .nested-link {
   text-decoration: none;
-  color: var(--light-blue-85);
+  color: var(--light-blue-90);
 }
 
-:is(a:not(nav a, :has(.article-card)), .nested-link):hover {
+:is(
+    a:not(.main-navigation a, .resume-nav-list a, :has(.article-card)),
+    .nested-link
+  ):hover {
   text-decoration: underline;
   text-decoration-color: inherit;
   text-underline-offset: 0.5rem;
 }
 
-button {
+button,
+.resume-nav-list a {
   margin-block: 0.75rem;
   padding: 1rem;
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
-  background-color: var(--primary-red);
+  background-color: var(--red-btn);
   color: var(--light-color);
   border-radius: 0.5rem;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
-  transition: all 150ms ease;
+  transition: all 200ms ease;
 }
 
-button:hover {
-  color: var(--primary-red);
-  background-color: var(--light-color);
+:is(button, .resume-nav-list a):hover {
+  background-color: var(--primary-red);
+}
+
+.resume-nav-list a:not(.active) {
+  background-color: var(--light-blue-background);
+  border-color: var(--light-tr-color);
+}
+
+.resume-nav-list a:not(.active):hover {
+  border-color: var(--light-color);
 }
 
 h1:not(.logo, .article-heading) {
   font-size: 2.8rem;
 }
 
+h1 {
+  margin-block: 3.5rem;
+}
+
 h1,
 h2 {
-  margin-block: 3.5rem;
   text-align: center;
   color: var(--primary-red);
 }
 
 h2 {
-  font-size: 2rem;
+  margin-block: 2.5rem;
+  font-size: 2.125rem;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.9rem;
 }
 
 h4 {
   font-size: 1.5rem;
+  color: var(--light-blue-85);
 }
 
 h3,
@@ -126,9 +150,20 @@ strong {
   color: var(--secondary-red);
 }
 
-h4,
+.presentation * {
+  text-align: left;
+}
+
+.presentation :is(h2, strong) {
+  color: var(--light-color);
+}
+
+.presentation strong {
+  border-bottom: 2px solid var(--light-color);
+}
+
 span {
-  color: var(--light-blue-85);
+  color: var(--light-blue-90);
 }
 
 h5,
@@ -144,13 +179,20 @@ h5 strong {
 }
 
 span:not(.nested-link) {
-  border-bottom: 1px dotted var(--light-blue-80);
+  border-bottom: 1px dotted var(--light-blue-85);
 }
 
 p {
-  padding: 1rem 1rem 1rem 0;
-  line-height: 1.62;
+  padding-inline-end: 1.5rem;
+  padding-block: 0.75rem;
+  line-height: 1.65;
   text-wrap: pretty;
+}
+
+.presentation p {
+  padding-block: 0.5rem;
+  font-size: 1.235rem;
+  font-weight: 900;
 }
 
 img {
@@ -164,7 +206,7 @@ li {
   list-style-type: none;
 }
 
-nav {
+.main-navigation {
   position: fixed;
   z-index: 10;
   top: 0;
@@ -186,14 +228,19 @@ nav {
 
 .logo a {
   text-transform: uppercase;
-  color: var(--light-blue-75);
+  color: var(--light-blue-80);
+  transition: all 200ms ease;
 }
 
-.nav-list li {
+.logo a:hover {
+  color: var(--light-blue-85);
+}
+
+.main-nav-list li {
   display: inline-block;
 }
 
-.nav-list a {
+.main-nav-list a {
   padding: 2rem 1.5rem;
   font-size: 1.25rem;
   font-weight: bold;
@@ -201,11 +248,15 @@ nav {
   transition: all 200ms ease;
 }
 
-.nav-list a:hover {
+.main-nav-list a.active {
   background-color: var(--dark-blue-20);
 }
 
-nav button {
+.main-nav-list a:hover {
+  background-color: var(--dark-blue-22-5);
+}
+
+.main-navigation button {
   width: 6.5rem;
   padding-inline: 0.5rem;
 }
@@ -228,26 +279,25 @@ nav button {
 }
 
 .roles {
-  color: var(--light-blue-80);
+  color: var(--light-blue-85);
   font-size: 1.5rem;
 }
 
-.page-body {
+main {
   padding: 8rem 2rem 0;
-  min-height: 72vh;
-}
-
-.container,
-.article-card {
-  max-width: 48rem;
 }
 
 .container {
   margin: 3rem auto;
-  padding: 1.75rem;
+  padding: 2.5rem 1.75rem;
   border-radius: 0.75rem;
-  border: 1px solid var(--dark-blue-30);
-  background-color: var(--dark-blue-12);
+  border: 1px solid var(--dark-blue-35);
+  background-color: var(--light-blue-background);
+}
+
+.container,
+.article-card {
+  max-width: 52rem;
 }
 
 .article-card {
@@ -255,12 +305,12 @@ nav button {
   padding: 0 1.75rem 1.75rem;
   border-radius: 0.75rem;
   border: 1px solid var(--light-tr-color);
-  background-color: var(--light-blue-background);
+  background-color: hsla(var(--blue-hue), var(--intense), 80%, 0.048);
   transition: all 350ms ease;
 }
 
 .article-card:hover {
-  background-color: hsla(var(--blue-hue), var(--intense), 80%, 0.025);
+  background-color: hsla(var(--blue-hue), var(--intense), 80%, 0.058);
 }
 
 .article-card > * {
@@ -271,9 +321,9 @@ nav button {
   border-radius: 0.5rem;
   background: linear-gradient(
     to right,
+    var(--red-btn),
     var(--primary-red),
-    var(--secondary-red),
-    var(--primary-red)
+    var(--red-btn)
   );
   background-size: 0 100%;
   background-repeat: no-repeat;
@@ -298,6 +348,7 @@ nav button {
   border: 1px solid var(--light-tr-color);
   overflow: clip;
 }
+
 .article-card-image-container img {
   width: 100%;
   height: 420px;
@@ -309,6 +360,8 @@ nav button {
 }
 
 .article-heading {
+  max-width: 32ch;
+  margin-inline: auto;
   text-wrap: balance;
 }
 
@@ -317,13 +370,26 @@ nav button {
 }
 
 .upvotes-section {
+  padding-block: 0.75rem;
+}
+
+.upvotes-section,
+.resume-nav-list {
   display: flex;
   align-items: center;
   justify-content: start;
   gap: 1.25rem;
-  padding-block: 1.75rem;
-  border-top: 1px solid var(--dark-blue-30);
-  border-bottom: 1px solid var(--dark-blue-30);
+}
+
+.upvotes-section,
+.add-comment-form,
+.resume-nav-list {
+  border-top: 1px solid var(--dark-blue-35);
+  border-bottom: 1px solid var(--dark-blue-35);
+}
+
+.upvotes-section {
+  padding-block: 0.75rem;
 }
 
 .article-body {
@@ -339,8 +405,6 @@ nav button {
 }
 
 .add-comment-form {
-  border-top: 1px solid var(--dark-blue-30);
-  border-bottom: 1px solid var(--dark-blue-30);
   padding: 2rem 0;
 }
 
@@ -361,12 +425,13 @@ textarea {
 
 .error {
   width: 320px;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--secondary-red);
-  background-color: var(--light-blue-background);
+  border: 1px solid var(--light-color);
+  background-color: var(--light-color);
   color: var(--secondary-red);
+  font-weight: 700;
 }
 
 .add-comment-form button {
@@ -379,8 +444,8 @@ textarea {
 }
 
 .comment:not(:last-child) {
-  border-bottom: 1px solid var(--dark-blue-30);
   padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--dark-blue-35);
 }
 
 .form-inputs {
@@ -392,10 +457,46 @@ textarea {
   background-color: var(--dark-blue-15);
 }
 
-.form-inputs input {
+.form-inputs :is(input, button) {
   width: 100%;
   margin-bottom: 1.25rem;
+}
+
+.form-inputs input {
   background-color: var(--light-color);
+}
+
+.resume-nav-list {
+  padding-block: 2.25rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(calc(280 / 16 * 1rem), 100%), 1fr)
+  );
+  gap: 1rem;
+}
+
+.grid,
+.presentation,
+.skills,
+.project,
+.experience article,
+.education article:not(:last-of-type) {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--dark-blue-35);
+}
+
+:is(.contact, .languages, .skills, .projects) ul {
+  margin-inline: 1.5rem;
+}
+
+:is(.contact, .languages, .skills, .projects) li {
+  list-style-type: disc;
+  padding-block: 0.25rem;
+  padding-inline-start: 0.5rem;
 }
 
 footer {
@@ -420,13 +521,13 @@ footer img {
 }
 
 @media (max-width: 768px) {
-  nav {
+  .main-navigation {
     justify-content: space-between;
   }
 }
 
-@media (max-width: 680px) {
-  .nav-list {
+@media (max-width: 700px) {
+  .main-nav-list {
     display: none;
   }
 
@@ -459,15 +560,24 @@ footer img {
     width: 210%;
     margin-left: -55%;
   }
+
+  .contact {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--dark-blue-35);
+  }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 600px) {
   body {
     font-size: 1.025rem;
   }
 
   h1:not(.logo) {
     font-size: 2.25rem;
+  }
+
+  h1.article-heading {
+    font-size: 1.9rem;
   }
 
   h2,
@@ -491,13 +601,21 @@ footer img {
     font-size: 1.25rem;
   }
 
+  .presentation p {
+    font-size: 1.125rem;
+  }
+
   p {
     padding-block: 0.75rem;
   }
 
-  .page-body,
+  main,
   .article-card {
     padding-inline: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
   }
 
   .form-inputs {
@@ -508,3 +626,4 @@ footer img {
     margin-bottom: 1rem;
   }
 }
+

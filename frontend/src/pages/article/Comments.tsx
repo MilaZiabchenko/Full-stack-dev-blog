@@ -1,4 +1,4 @@
-import type { Comment } from '../pages/Article';
+import type { Comment } from './Article';
 
 const Comments = ({ comments }: { comments: Comment[] }) => (
   <ul>

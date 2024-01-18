@@ -20,8 +20,20 @@ const routesData = [
     title: 'About'
   },
   {
+    path: '/resume',
+    title: 'Resume'
+  },
+  {
+    path: '/resume/web-developer',
+    title: 'Web Developer Resume'
+  },
+  {
+    path: '/resume/interpreter',
+    title: 'Interpreter Resume'
+  },
+  {
     path: '/signup',
-    title: 'Sign Up'
+    title: 'Create Account'
   },
   {
     path: '/login',

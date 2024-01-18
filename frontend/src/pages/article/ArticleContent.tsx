@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ArticleData } from '../data/articles-data';
+import type { ArticleData } from '../../data/articles-data';
 
 const ArticleContent = ({ content }: { content: ArticleData['content'] }) => (
   <>

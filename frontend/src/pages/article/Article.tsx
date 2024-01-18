@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-import useUser from '../hooks/useUser';
-import { getAxiosErrorMessage } from '../utils/getAxiosErrorMessage';
-import { capitalizeFirstLetter } from '../utils/capitalizeFirstLetter';
-import articlesData from '../data/articles-data';
-import ArticleContent from '../components/ArticleContent';
-import CommentForm from '../components/CommentForm';
-import Comments from '../components/Comments';
+import useUser from '../../hooks/useUser';
+import { getAxiosErrorMessage } from '../../utils/getAxiosErrorMessage';
+import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
+import articlesData from '../../data/articles-data';
+import ArticleContent from './ArticleContent';
+import CommentForm from './CommentForm';
+import Comments from './Comments';
 
 type Comment = Record<'postedBy' | 'text', string>;
 

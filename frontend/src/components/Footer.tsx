@@ -8,7 +8,6 @@ const Footer = () => (
       <a
         href='https://github.com/MilaZiabchenko/Full-stack-dev-blog'
         target='_blank'
-        rel='noopener noreferrer'
       >
         view source code on GitHub →
       </a>
