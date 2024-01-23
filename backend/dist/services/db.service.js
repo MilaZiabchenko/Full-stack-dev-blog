@@ -1,17 +1,18 @@
 import { MongoClient, Db, MongoServerError } from 'mongodb';
+import { env } from '../helpers/envValidator.helper.js';
 import { articleValidator } from '../models/Article.schema.js';
-const client = new MongoClient(process.env.DB_CONN_STRING);
-const database = client.db(process.env.DB_NAME);
-const collection = database.collection(process.env.ARTICLES_COLLECTION_NAME);
+const client = new MongoClient(env.DB_CONN_STRING);
+const database = client.db(env.DB_NAME);
+const collection = database.collection(env.ARTICLES_COLLECTION_NAME);
 const applySchemaValidation = async (database) => {
     await database
         .command({
-        collMod: process.env.ARTICLES_COLLECTION_NAME,
+        collMod: env.ARTICLES_COLLECTION_NAME,
         validator: articleValidator
     })
         .catch(async (err) => {
         if (err.codeName === 'NamespaceNotFound') {
-            await database.createCollection(process.env.ARTICLES_COLLECTION_NAME, {
+            await database.createCollection(env.ARTICLES_COLLECTION_NAME, {
                 validator: articleValidator
             });
         }
