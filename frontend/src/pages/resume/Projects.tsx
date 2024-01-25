@@ -41,8 +41,9 @@ const Projects = () => (
           wrote about my blog's server-side logic implementation and code
           structure in the article{' '}
           <Link to='/articles/node-express-folder-structure'>
-            My Way to Structure Node/Express/TypeScript App →
+            My Way to Structure Node/Express/TypeScript App
           </Link>
+          ;
         </li>
         <li>
           <a
@@ -83,11 +84,12 @@ const Projects = () => (
           transitions, and other built into React techniques;
         </li>
         <li>
-          wrote in great detail about custom Hooks pattern implementation in my
-          NeTWondeRLanD app in the article{' '}
+          wrote in great detail about custom Hooks pattern implementation in the
+          NeTWondeRLanD app in my article{' '}
           <Link to='/articles/react-custom-hooks'>
-            Making Friends with React Custom Hooks →
+            Making Friends with React Custom Hooks
           </Link>
+          ;
         </li>
         <li>
           <a

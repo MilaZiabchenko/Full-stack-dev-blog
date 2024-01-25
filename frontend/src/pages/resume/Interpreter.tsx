@@ -7,7 +7,7 @@ const Interpreter = () => (
   <>
     <section className='presentation'>
       <h2>
-        Hi! My name is <strong>Mila Ziabchenko</strong>🎇
+        Hi, I'm <strong>Mila Ziabchenko</strong>🎇
       </h2>
       <p>
         I'm a professional interpreter of English, Italian, Spanish, Russian and
@@ -17,7 +17,7 @@ const Interpreter = () => (
         I also have several years of experience in teaching Italian as a foreign
         language and written translations.
       </p>
-      <p>Learning languages is my lifetime passion 💖</p>
+      <p>Mastering languages is my lifetime passion 💖</p>
     </section>
     <div className='grid'>
       <Contact />

@@ -80,7 +80,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/react-accordion/footer.webp',
           alt: 'Code',
-          width: '95'
+          width: '85'
         }
       },
       {
@@ -227,7 +227,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/react-accordion/countries_accordion_props.webp',
           alt: 'Code',
-          width: '50'
+          width: '45'
         }
       },
       {
@@ -250,7 +250,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/react-accordion/country_type_alias.webp',
           alt: 'Code',
-          width: '50'
+          width: '45'
         }
       },
       {
@@ -270,7 +270,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/react-accordion/accordion.webp',
           alt: 'Code',
-          width: '95'
+          width: '85'
         }
       },
       {
@@ -344,7 +344,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/react-accordion/spring_styles.webp',
           alt: 'Code',
-          width: '100'
+          width: '95'
         }
       },
       {
@@ -497,7 +497,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/custom-hooks/caching_data.webp',
           alt: 'Code',
-          width: '67'
+          width: '65'
         }
       },
       {
@@ -527,7 +527,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/custom-hooks/use_axios_values.webp',
           alt: 'Code',
-          width: '67'
+          width: '65'
         }
       },
       {
@@ -554,7 +554,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/custom-hooks/use_input.webp',
           alt: 'Code',
-          width: '67'
+          width: '75'
         }
       },
       {
@@ -622,7 +622,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/custom-hooks/debounced_query.webp',
           alt: 'Code',
-          width: '75'
+          width: '85'
         }
       },
       {
@@ -690,7 +690,7 @@ const articlesData: readonly ArticleData[] = [
   {
     name: 'node-express-folder-structure',
     title: 'My Way to Structure Node/Express/TypeScript App',
-    updated: 'in September 2023',
+    updated: 'in January 2024',
     content: [
       { h3: `Code structure overview` },
 
@@ -716,7 +716,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/folder-structure/structure.webp',
           alt: 'Code',
-          width: '67'
+          width: '65'
         }
       },
       {
@@ -738,7 +738,7 @@ const articlesData: readonly ArticleData[] = [
       },
       { h4: `Services` },
       {
-        p: `The services folder usually includes business logic for the project. This is where I configure schema validation and connection to the database — I'm using MongoDB Atlas for my blog app.`
+        p: `The services folder usually includes business logic for the project. This is where I configure schema validation and connection to the database — I'm using MongoDB Atlas in my blog app.`
       },
       {
         img: {
@@ -764,14 +764,14 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/folder-structure/comment_model.webp',
           alt: 'Code',
-          width: '67'
+          width: '75'
         }
       },
       {
         img: {
           src: '/images/folder-structure/article_model.webp',
           alt: 'Code',
-          width: '67'
+          width: '75'
         }
       },
 
@@ -805,7 +805,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/folder-structure/authentication.webp',
           alt: 'Code',
-          width: '100'
+          width: '95'
         }
       },
       {
@@ -832,7 +832,7 @@ const articlesData: readonly ArticleData[] = [
         img: {
           src: '/images/folder-structure/controller.webp',
           alt: 'Code',
-          width: '100'
+          width: '95'
         }
       },
       {
@@ -840,11 +840,11 @@ const articlesData: readonly ArticleData[] = [
       },
       { h4: `Helpers` },
       {
-        p: `When building APIs, helper functions are often related to specific controllers.
+        p: `When building APIs, helper functions are often related to specific tasks.
       `
       },
       {
-        p: `In the codebase of my blog the commentParser.helper.ts module contains functionality for parsing user input. I don't know in advance, what the user will type in the input field, composing a new comment. So, I created a helper that modifies the user's input according to the Comment type and transforms it into a valid comment before storing it to the database.
+        p: `In the codebase of my blog, the commentParser.helper.ts module contains functionality for parsing and sanitizing user input. I don't know in advance, what the user will type in the input field, composing a new comment. So, I created a helper that modifies the user's input according to the Comment type and transforms it into a valid comment before storing it to the database:
       `
       },
       {
@@ -853,6 +853,22 @@ const articlesData: readonly ArticleData[] = [
           alt: 'Code',
           width: '100'
         }
+      },
+      {
+        p: `Another useful helper is produced in the envValidator.helper.ts module, using 3rd-party library called Envalid. This small npm package is used for accessing and validating environment variables.`
+      },
+      {
+        p: `Envalid's cleanEnv() function accepts environment variables object and validators object that specifies the type of each env variable, as arguments, and returns a sanitized, immutable environment object:`
+      },
+      {
+        img: {
+          src: '/images/folder-structure/env_validator.webp',
+          alt: 'Code',
+          width: '85'
+        }
+      },
+      {
+        p: `Now, we can use this env object in place of process.env object in any module that consumes environment variables, passed to cleanEnv(), and TypeScript will infer the type of each env variable, so we don't have to resort to type assertions 😉`
       },
       { h4: `Utils` },
       {

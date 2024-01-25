@@ -3,14 +3,16 @@ const Skills = () => (
     <h3>Skills</h3>
     <ul>
       <li>
-        <span>Front End:</span> HTML, CSS, JavaScript, TypeScript, React, Styled
-        Components
+        <span>Programming Languages:</span> JavaScript, TypeScript, Rust
       </li>
       <li>
-        <span>Back End:</span> Node, TypeScript, Express, MongoDB, Rust
+        <span>Front End:</span> HTML, CSS, React, Styled Components
       </li>
       <li>
-        <span>Other:</span> Git, Axios, REST API, GraphQL, Firebase
+        <span>Back End:</span> Node, Express, MongoDB, Firebase
+      </li>
+      <li>
+        <span>Miscellaneous:</span> Git, Axios, REST API, GraphQL
       </li>
     </ul>
   </section>

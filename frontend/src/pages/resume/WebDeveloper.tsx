@@ -10,7 +10,7 @@ const WebDeveloper = () => (
   <>
     <section className='presentation'>
       <h2>
-        Hi! My name is <strong>Mila Ziabchenko</strong>🎇
+        Hi, I'm <strong>Mila Ziabchenko</strong>🎇
       </h2>
       <p>
         I'm a passionate and creative <span>Full-Stack Developer</span> with a
@@ -43,16 +43,25 @@ const WebDeveloper = () => (
         <p>
           Build full-stack and front-end web sites and applications from
           scratch, using modern technologies — TypeScript, React and its
-          ecosystem, Axios, Vite, Node, Express, MongoDB, and other cool tools.
+          ecosystem, Axios, Vite, Node, Express, MongoDB, Firebase, and other
+          cool tools.
         </p>
         <p>
-          Implement in my projects latest HTML, CSS, JavaScript and TypeScript
-          features, composition and reusability with functional programming,
-          modern React patterns, like Hooks and Render Props, performance
-          optimization techniques, routing with React Router v6 latest features,
-          modular approach in the code structure, clean code principles, REST
-          and GraphQL API integration, authentication and authorization
-          middleware, database connection, configurations and deployment 😅
+          In the client-side development, implement latest HTML, CSS, JavaScript
+          and TypeScript features, composition and reusability with functional
+          programming, modern React patterns, like Hooks and Render Props,
+          various performance optimization techniques (memoization, code
+          splitting), routing with React Router v6 latest features, and also
+          practice different approaches for adding animations and styles:
+          CSS-in-CSS, CSS-in-JS, and Utility-First-CSS.
+        </p>
+        <p>
+          In the the server-side development, apply modular approach in the code
+          structure, clean code principles, RESTful and GraphQL API integration
+          with Express and Apollo, error handling, authentication and
+          authorization middleware, database connection, implement schema, env
+          variables and user input validations, various configurations, and
+          more... 😅
         </p>
         <p>
           <a href='https://github.com/MilaZiabchenko' target='_blank'>
@@ -70,7 +79,7 @@ const WebDeveloper = () => (
         <p>
           Implemented semantic mark-up, responsive design with CSS Grid and
           Flexbox, OOP and functional programming principles, React best
-          practices, SEO and performance optimizations in my apps 👩‍💻
+          practices, performance optimizations and SEO in my apps 👩‍💻
         </p>
       </article>
     </Experience>
