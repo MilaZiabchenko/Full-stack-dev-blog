@@ -20,7 +20,7 @@ const CommentForm = ({ articleName, onAddedComment }: AddCommentFormProps) => {
   const [error, setError] = useState('');
   const [comment, setComment] = useState({ author: '', text: '' });
 
-  const addComment = async (e: FormEvent) => {
+  const addComment = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const token = user && (await user.getIdToken());

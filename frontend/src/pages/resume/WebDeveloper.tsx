@@ -13,17 +13,18 @@ const WebDeveloper = () => (
         Hi, I'm <strong>Mila Ziabchenko</strong>🎇
       </h2>
       <p>
-        I'm a passionate and creative <span>Full-Stack Developer</span> with a
-        particular focus on <span>Front End</span> (HTML, CSS, JavaScript,
-        TypeScript, React) and a keen interest in <span>Back End</span> (Node,
-        Rust) 🐱‍💻
+        I'm a passionate <span>Web Developer</span> with a particular focus on{' '}
+        <span>Front End</span> (HTML, CSS, JavaScript, TypeScript, React, Next) and a
+        keen interest in <span>Back End</span> (Node, Express, MongoDB, Rust)
+        🐱‍💻
       </p>
       <p>
         I value high quality and build{' '}
         <a href='https://github.com/MilaZiabchenko' target='_blank'>
           my projects
         </a>{' '}
-        with attention to every detail, keeping the big picture in mind 💖
+        with attention to detail and the big picture in mind, following best
+        practices and finding creative solutions to challenging problems 💖
       </p>
       <p>
         I also write about web development in{' '}
@@ -38,13 +39,13 @@ const WebDeveloper = () => (
     <Projects />
     <Experience>
       <article>
-        <h4>🔆 Full-Stack Web Developer</h4>
+        <h4>🔆 Web Developer (Front End, Full Stack)</h4>
         <h5>2022 - present</h5>
         <p>
-          Build full-stack and front-end web sites and applications from
-          scratch, using modern technologies — TypeScript, React and its
-          ecosystem, Axios, Vite, Node, Express, MongoDB, Firebase, and other
-          cool tools.
+          Design & build high-quality front-end and full-stack web sites and
+          applications from scratch, using modern technologies — TypeScript,
+          React and its ecosystem, Axios, Vite, Node, Express, MongoDB,
+          Firebase, and other cool tools.
         </p>
         <p>
           In the client-side development, implement latest HTML, CSS, JavaScript
@@ -77,9 +78,10 @@ const WebDeveloper = () => (
           Bootstrap, JavaScript, native browser APIs, React and Firebase.
         </p>
         <p>
-          Implemented semantic mark-up, responsive design with CSS Grid and
-          Flexbox, OOP and functional programming principles, React best
-          practices, performance optimizations and SEO in my apps 👩‍💻
+          Implemented semantic mark-up, responsive design with CSS Grid, Flexbox
+          and positioning, custom animations, OOP and functional programming
+          principles, React best practices, performance optimizations and SEO in
+          my apps 👩‍💻
         </p>
       </article>
     </Experience>
