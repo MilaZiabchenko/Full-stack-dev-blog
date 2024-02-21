@@ -1,5 +1,5 @@
 import { useRouteError, Link } from 'react-router-dom';
-import { getErrorMessage } from '../utils/getErrorMessage';
+import { getErrorMessage } from '../helpers/getErrorMessage';
 
 const Error = () => {
   const error = useRouteError();

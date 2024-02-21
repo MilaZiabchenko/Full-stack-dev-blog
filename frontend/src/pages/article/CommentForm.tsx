@@ -8,7 +8,8 @@ import axios from 'axios';
 import useUser from '../../hooks/useUser';
 import type { ArticleData } from '../../data/articles-data';
 import type { ArticleInfo } from './Article';
-import { getAxiosErrorMessage } from '../../utils/getAxiosErrorMessage';
+import { getUserTokenAndHeaders } from '../../helpers/getUserTokenAndHeaders';
+import { getAxiosErrorMessage } from '../../helpers/getAxiosErrorMessage';
 
 type AddCommentFormProps = {
   articleName: ArticleData['name'];
@@ -20,11 +21,8 @@ const CommentForm = ({ articleName, onAddedComment }: AddCommentFormProps) => {
   const [error, setError] = useState('');
   const [comment, setComment] = useState({ author: '', text: '' });
 
-  const addComment = async (e: FormEvent) => {
+  const addComment = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const token = user && (await user.getIdToken());
-    const headers = token ? { authtoken: token } : {};
 
     if (comment.author === '' || comment.text === '') {
       setError('Name and comment fields cannot be empty!');
@@ -40,7 +38,7 @@ const CommentForm = ({ articleName, onAddedComment }: AddCommentFormProps) => {
           text: comment.text
         },
         {
-          headers
+          headers: await getUserTokenAndHeaders(user)
         }
       );
 
@@ -95,7 +93,7 @@ const CommentForm = ({ articleName, onAddedComment }: AddCommentFormProps) => {
           ></textarea>
         </label>
       </div>
-      {error && <p className='error'>{error}</p>}
+      {error && <p className='error add-comment-error'>{error}</p>}
       <button type='submit'>Add Comment</button>
     </form>
   );

@@ -6,7 +6,7 @@ import {
 } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { getErrorMessage } from '../utils/getErrorMessage';
+import { getErrorMessage } from '../helpers/getErrorMessage';
 
 const SignUp = () => {
   const [inputs, setInputs] = useState({
@@ -50,7 +50,7 @@ const SignUp = () => {
     <form onSubmit={createAccount} onBlur={handleBlur}>
       <h1>Create Account</h1>
       <div className='form-inputs'>
-        {error && <p className='error'>{error}</p>}
+        {error && <p className='error sign-in-error'>{error}</p>}
         <input
           type='email'
           placeholder='Email'

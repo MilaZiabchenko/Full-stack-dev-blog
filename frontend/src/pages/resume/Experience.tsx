@@ -12,29 +12,30 @@ const Experience = ({
       <h4>🔆 Technical Writer</h4>
       <h5>2023 - present</h5>
       <p>
-        Write original articles about web development in{' '}
+        Write original in-depth articles about web development in{' '}
         <Link to='/articles'>my blog →</Link>
       </p>
     </article>
     {children}
     <article>
-      <h4>🔆 English | Italian | Ukrainian Interpreter & Translator</h4>
+      <h4>🔆 Interpreter (English, Italian, Spanish, Ukrainian, Russian)</h4>
       <h5>2012 - present</h5>
       <p>
         Work as a freelance interpreter and translator in various domains —
-        technology, media, tourism, healthcare, and others spheres...
+        technology, media, tourism, healthcare, law and others spheres...
       </p>
     </article>
     <article>
-      <h4>🔆 Specialist in the realm of International Adoptions in Ukraine</h4>
+      <h4>🔆 International Adoption Specialist</h4>
       <h5>2003 - 2012</h5>
       <p>
-        Worked as an interpreter for Italian and Spanish adoptive couples who
+        Worked as an Interpreter for Italian and Spanish adoptive couples who
         went through a long and hard process of adoption in Ukraine.
       </p>
       <p>
         Facilitated communication between adoptive parents and their adoptive
-        children and preparation of all the documents related to the adoption.
+        children, and assisted them in all the paperwork related to the
+        adoption.
       </p>
       <p>
         Represented adoptive parents in various institutions — local

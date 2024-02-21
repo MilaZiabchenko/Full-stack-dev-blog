@@ -6,7 +6,7 @@ import {
 } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { getErrorMessage } from '../utils/getErrorMessage';
+import { getErrorMessage } from '../helpers/getErrorMessage';
 
 const SignIn = () => {
   const [inputs, setInputs] = useState({ email: '', password: '' });
@@ -40,7 +40,7 @@ const SignIn = () => {
     <form onSubmit={logIn} onBlur={handleBlur}>
       <h1>Log In</h1>
       <div className='form-inputs'>
-        {error && <p className='error'>{error}</p>}
+        {error && <p className='error sign-in-error'>{error}</p>}
         <input
           type='email'
           placeholder='Email'

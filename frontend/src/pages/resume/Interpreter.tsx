@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Contact from './Contact';
 import Languages from './Languages';
 import Experience from './Experience';
@@ -10,12 +11,13 @@ const Interpreter = () => (
         Hi, I'm <strong>Mila Ziabchenko</strong>🎇
       </h2>
       <p>
-        I'm a professional interpreter of English, Italian, Spanish, Russian and
+        I'm a professional Interpreter of English, Italian, Spanish, Russian and
         Ukrainian languages 🌍
       </p>
       <p>
-        I also have several years of experience in teaching Italian as a foreign
-        language and written translations.
+        I also have several years of experience in teaching Italian,
+        translating, and writing original articles about web development in{' '}
+        <Link to='/articles'>my blog →</Link>
       </p>
       <p>Mastering languages is my lifetime passion 💖</p>
     </section>

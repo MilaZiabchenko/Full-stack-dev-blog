@@ -690,7 +690,7 @@ const articlesData: readonly ArticleData[] = [
   {
     name: 'node-express-folder-structure',
     title: 'My Way to Structure Node/Express/TypeScript App',
-    updated: 'in January 2024',
+    updated: 'in April 2024',
     content: [
       { h3: `Code structure overview` },
 
@@ -795,7 +795,7 @@ const articlesData: readonly ArticleData[] = [
       },
       { h4: `Middleware` },
       {
-        p: `Middleware functions help us perform various actions between receiving a request from the client and sending response back from the server. These helpers could range from critical middleware like Body Parser, Global Error Handlers, Authentication Middleware, enabling CORS, Attaching Custom Headers or setting a View Engine in Express.js.
+        p: `Middleware functions help us perform various actions between receiving a request from the client and sending response back from the server. These helpers could range from critical middleware like Body Parser, Global Error Handlers, Authentication Middleware, enabling CORS, attaching Custom Headers or setting a View Engine in Express.js.
       `
       },
       {

@@ -4,11 +4,11 @@ const About = () => (
   <section className='container'>
     <h1>About Me</h1>
     <p>
-      My name is <strong>Mila Ziabchenko</strong> 😊 I'm a{' '}
-      <Link to='/resume/web-developer'>passionate web developer</Link> who
-      creates applications with HTML, CSS, JavaScript, TypeScript, React.js,
-      Node.js, Express.js, GraphQL, MongoDB, Firebase, and other modern
-      technologies and tools.
+      My name is <strong>Mila Ziabchenko</strong> 😊 I'm a passionate{' '}
+      <Link to='/resume/web-developer'>web developer</Link> who creates
+      applications with HTML, CSS, JavaScript, TypeScript, React.js, Node.js,
+      Express.js, GraphQL, MongoDB, Firebase, and other modern technologies and
+      tools.
     </p>
     <p>
       I'm constantly improving my programming and problem solving skills,

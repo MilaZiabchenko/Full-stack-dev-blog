@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import useUser from '../../hooks/useUser';
-import { getAxiosErrorMessage } from '../../utils/getAxiosErrorMessage';
+import { getUserTokenAndHeaders } from '../../helpers/getUserTokenAndHeaders';
+import { getAxiosErrorMessage } from '../../helpers/getAxiosErrorMessage';
 import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
 import articlesData from '../../data/articles-data';
 import ArticleContent from './ArticleContent';
@@ -31,15 +32,10 @@ const Article = () => {
 
   useEffect(() => {
     const loadArticleInfo = async () => {
-      const token = user && (await user.getIdToken());
-      const headers = token ? { authtoken: token } : {};
-
       try {
         const response = await axios.get<ArticleInfo>(
           `/api/articles/${articleName}`,
-          {
-            headers
-          }
+          { headers: await getUserTokenAndHeaders(user) }
         );
 
         setArticleInfo(response.data);
@@ -54,14 +50,11 @@ const Article = () => {
   }, [articleName, user, isLoading]);
 
   const addUpvote = async () => {
-    const token = user && (await user.getIdToken());
-    const headers = token ? { authtoken: token } : {};
-
     try {
       const response = await axios.patch<ArticleInfo>(
         `/api/articles/${articleName}/upvote`,
         null,
-        { headers }
+        { headers: await getUserTokenAndHeaders(user) }
       );
 
       const updatedArticle = response.data;
@@ -86,14 +79,16 @@ const Article = () => {
       <p className='text-center'>
         <Link to='/articles'>← Back to Articles</Link>
       </p>
-      <h1 className='article-heading'>{capitalizeFirstLetter(title)}</h1>
 
-      <section className='article-metadata'>
-        <h5>
-          Written by <strong>Mila Ziabchenko</strong>
-        </h5>
-        <h5>Last updated {updated}</h5>
-      </section>
+      <header>
+        <h1 className='article-heading'>{capitalizeFirstLetter(title)}</h1>
+        <div className='article-metadata'>
+          <h5>
+            Written by <strong>Mila Ziabchenko</strong>
+          </h5>
+          <h5>Last updated {updated}</h5>
+        </div>
+      </header>
 
       <section className='upvotes-section'>
         {user ? (

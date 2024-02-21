@@ -1,16 +1,23 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import useText from '../hooks/useText';
 
 const ResumeLayout = () => {
+  const roles = useText(
+    'web developer | interpreter | translator | teacher',
+    'web developer & interpreter',
+    750
+  );
+
   return (
-    <section className='container'>
-      <img src='/images/avatar.webp' alt='Mi' className='avatar' />
-      <h1>
-        Mila Ziabchenko
-        <br />
-        <span className='roles'>
-          web developer | tech writer | interpreter{' '}
-        </span>
-      </h1>
+    <div className='container'>
+      <header>
+        <img src='/images/avatar.webp' alt='Mi' className='avatar' />
+        <h1>
+          Mila Ziabchenko
+          <br />
+          <span className='roles'>{roles}</span>
+        </h1>
+      </header>
       <nav className='resume-navigation'>
         <ul className='resume-nav-list'>
           <li>
@@ -21,8 +28,9 @@ const ResumeLayout = () => {
           </li>
         </ul>
       </nav>
+
       <Outlet />
-    </section>
+    </div>
   );
 };
 
