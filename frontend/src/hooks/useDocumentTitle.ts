@@ -8,9 +8,9 @@ const useDocumentTitle = (
 ) => {
   const { pathname } = useLocation();
 
-  const currentRoute = routesData.find(route => route.path === pathname);
-
   useEffect(() => {
+    const currentRoute = routesData.find(route => route.path === pathname);
+
     document.title = currentRoute?.title
       ? `${currentRoute.title} | ${originalTitle}`
       : originalTitle;
@@ -18,7 +18,7 @@ const useDocumentTitle = (
     return () => {
       document.title = originalTitle;
     };
-  }, [pathname]);
+  }, [routesData, originalTitle, pathname]);
 };
 
 export default useDocumentTitle;

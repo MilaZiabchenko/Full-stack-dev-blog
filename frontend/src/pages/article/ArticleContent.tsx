@@ -2,7 +2,7 @@ import React from 'react';
 import type { ArticleData } from '../../data/articles-data';
 
 const ArticleContent = ({ content }: { content: ArticleData['content'] }) => (
-  <>
+  <section className='article-body'>
     {content?.map((element, i) => (
       <React.Fragment key={i}>
         {Object.hasOwn(element, 'p') && <p>{element['p']}</p>}
@@ -20,7 +20,7 @@ const ArticleContent = ({ content }: { content: ArticleData['content'] }) => (
         )}
       </React.Fragment>
     ))}
-  </>
+  </section>
 );
 
 export default ArticleContent;

@@ -21,8 +21,22 @@ const Experience = ({
       <h4>🔆 Interpreter (English, Italian, Spanish, Ukrainian, Russian)</h4>
       <h5>2012 - present</h5>
       <p>
-        Work as a freelance interpreter and translator in various domains —
-        technology, media, tourism, healthcare, law and others spheres...
+        Work as a Freelance Interpreter and Translator in various domains —
+        technology, business, law, media, tourism, culture, healthcare, and
+        other spheres.
+      </p>
+      <p>
+        Provide interpreting services during meetings with government and
+        business representatives.
+      </p>
+      <p>
+        Facilitate negotiations between two or more parties who speak different
+        languages.
+      </p>
+      <p>Mediate discussions between the speaker and the audience.</p>
+      <p>
+        Accompany foreign visitors to various meetings and events during their
+        trips in Ukraine.
       </p>
     </article>
     <article>
@@ -50,9 +64,10 @@ const Experience = ({
       <h4>🔆 Teacher of Italian as a Foreign Language</h4>
       <h5>2000 - 2003</h5>
       <p>
-        Taught Italian language at the First State Kyiv Foreign Languages
-        Courses in an innovative and creative way, making learning process
-        engaging, fun and effective 👩‍🏫
+        Taught Italian language at the First Kyiv State Foreign Languages
+        Courses in an innovative and creative way, using communicative and other
+        approaches, and making the learning process engaging, fun and effective
+        👩‍🏫
       </p>
     </article>
   </section>

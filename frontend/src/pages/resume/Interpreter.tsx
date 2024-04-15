@@ -28,7 +28,7 @@ const Interpreter = () => (
     <Experience />
     <Education>
       <article>
-        <h4>👩‍🎓 First State Kyiv Foreign Languages Courses</h4>
+        <h4>👩‍🎓 First Kyiv State Foreign Languages Courses</h4>
         <h5>1999 - 2001</h5>
         <p>Italian Language Translator Diploma</p>
         <h5>1999 - 2001</h5>

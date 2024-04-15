@@ -17,7 +17,7 @@ const Header = () => {
     }
 
     setMobileNavListIsVisible(false);
-  }, [pathname]);
+  }, [pathname, screenWidth]);
 
   const toggleMobileNavListIsVisible = () => {
     setMobileNavListIsVisible(!mobileNavListIsVisible);

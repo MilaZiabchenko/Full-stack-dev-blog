@@ -7,7 +7,7 @@ const useText = (longText: string, shortText: string, breakpoint: number) => {
 
   useEffect(() => {
     screenWidth > breakpoint ? setText(longText) : setText(shortText);
-  }, [screenWidth]);
+  }, [longText, shortText, breakpoint, screenWidth]);
 
   return text;
 };

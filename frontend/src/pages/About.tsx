@@ -6,9 +6,8 @@ const About = () => (
     <p>
       My name is <strong>Mila Ziabchenko</strong> 😊 I'm a passionate{' '}
       <Link to='/resume/web-developer'>web developer</Link> who creates
-      applications with HTML, CSS, JavaScript, TypeScript, React.js, Node.js,
-      Express.js, GraphQL, MongoDB, Firebase, and other modern technologies and
-      tools.
+      applications with HTML, CSS, JavaScript, TypeScript, React, Node, Express,
+      GraphQL, MongoDB, Firebase, and other modern technologies and tools.
     </p>
     <p>
       I'm constantly improving my programming and problem solving skills,
@@ -41,7 +40,7 @@ const About = () => (
     </p>
     <p>
       My first job was a teacher of Italian as a foreign language at the First
-      State Kyiv Foreign Languages Courses.
+      Kyiv State Foreign Languages Courses.
     </p>
     <p>
       My other interests include (but are not limited to) spending time with my

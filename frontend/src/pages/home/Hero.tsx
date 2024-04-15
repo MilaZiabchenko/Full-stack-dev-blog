@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section>
       <header>
-        <img src='/images/avatar.webp' alt='Mi' className='avatar' />
+        <img src='/images/avatar_1.webp' alt='Mi' className='avatar' />
         <h1>
           Hi, I'm Mila,
           <br />

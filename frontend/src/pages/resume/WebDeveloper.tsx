@@ -14,9 +14,9 @@ const WebDeveloper = () => (
       </h2>
       <p>
         I'm a passionate <span>Web Developer</span> with a particular focus on{' '}
-        <span>Front End</span> (HTML, CSS, JavaScript, TypeScript, React, Next) and a
-        keen interest in <span>Back End</span> (Node, Express, MongoDB, Rust)
-        🐱‍💻
+        <span>Front End</span> (HTML, CSS, JavaScript, TypeScript, React, Next)
+        and a keen interest in <span>Back End</span> (Node, Express, MongoDB,
+        Rust) 💖
       </p>
       <p>
         I value high quality and build{' '}
@@ -24,7 +24,7 @@ const WebDeveloper = () => (
           my projects
         </a>{' '}
         with attention to detail and the big picture in mind, following best
-        practices and finding creative solutions to challenging problems 💖
+        practices and finding creative solutions to challenging problems 🐱‍💻
       </p>
       <p>
         I also write about web development in{' '}
@@ -57,7 +57,7 @@ const WebDeveloper = () => (
           CSS-in-CSS, CSS-in-JS, and Utility-First-CSS.
         </p>
         <p>
-          In the the server-side development, apply modular approach in the code
+          In the server-side development, apply modular approach in the code
           structure, clean code principles, RESTful and GraphQL API integration
           with Express and Apollo, error handling, authentication and
           authorization middleware, database connection, implement schema, env

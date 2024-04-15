@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import useUser from '../../hooks/useUser';
 import { getUserTokenAndHeaders } from '../../helpers/getUserTokenAndHeaders';
 import { getAxiosErrorMessage } from '../../helpers/getAxiosErrorMessage';
-import { capitalizeFirstLetter } from '../../utils/capitalizeFirstLetter';
 import articlesData from '../../data/articles-data';
+import ArticleHeader from './ArticleHeader';
+import ArticleUpvotes from './ArticleUpvotes';
 import ArticleContent from './ArticleContent';
 import CommentForm from './CommentForm';
-import Comments from './Comments';
+import ArticleComments from './ArticleComments';
+import LogInButton from './LogInButton';
 
 type Comment = Record<'postedBy' | 'text', string>;
 
@@ -20,7 +22,6 @@ type ArticleInfo = {
 
 const Article = () => {
   const { articleName } = useParams();
-  const navigate = useNavigate();
 
   const [articleInfo, setArticleInfo] = useState<ArticleInfo>({
     upvotes: 0,
@@ -49,22 +50,6 @@ const Article = () => {
     }
   }, [articleName, user, isLoading]);
 
-  const addUpvote = async () => {
-    try {
-      const response = await axios.patch<ArticleInfo>(
-        `/api/articles/${articleName}/upvote`,
-        null,
-        { headers: await getUserTokenAndHeaders(user) }
-      );
-
-      const updatedArticle = response.data;
-
-      setArticleInfo(updatedArticle);
-    } catch (error) {
-      setError(getAxiosErrorMessage(error));
-    }
-  };
-
   const articleData = articlesData.find(
     article => article.name === articleName
   );
@@ -79,49 +64,24 @@ const Article = () => {
       <p className='text-center'>
         <Link to='/articles'>← Back to Articles</Link>
       </p>
-
-      <header>
-        <h1 className='article-heading'>{capitalizeFirstLetter(title)}</h1>
-        <div className='article-metadata'>
-          <h5>
-            Written by <strong>Mila Ziabchenko</strong>
-          </h5>
-          <h5>Last updated {updated}</h5>
-        </div>
-      </header>
-
-      <section className='upvotes-section'>
-        {user ? (
-          <button onClick={addUpvote}>
-            {canUpvote ? 'Upvote' : 'Already Upvoted'}
-          </button>
-        ) : (
-          <button onClick={() => navigate('/login')}>Log in to upvote</button>
-        )}
-        <p>
-          <span>{upvotes === 1 ? `1 upvote` : `${upvotes ?? 0} upvotes`}</span>
-        </p>
-      </section>
-
-      <section className='article-body'>
-        <ArticleContent content={content} />
-      </section>
-
+      <ArticleHeader title={title} updated={updated} />
+      <ArticleUpvotes
+        articleName={name}
+        onUpvotedArticle={updatedArticle => setArticleInfo(updatedArticle)}
+        onError={error => setError(error)}
+        canUpvote={canUpvote}
+        upvotes={upvotes}
+      />
+      <ArticleContent content={content} />
       {user ? (
         <CommentForm
           articleName={name}
           onAddedComment={updatedArticle => setArticleInfo(updatedArticle)}
         />
       ) : (
-        <button onClick={() => navigate('/login')}>
-          Log in to add a comment
-        </button>
+        <LogInButton>Log in to add a comment</LogInButton>
       )}
-
-      <section className='comments'>
-        <h3>Comments ({comments?.length ?? 0})</h3>
-        <Comments comments={comments} />
-      </section>
+      <ArticleComments comments={comments} />
     </div>
   );
 };

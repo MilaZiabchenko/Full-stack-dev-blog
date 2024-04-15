@@ -11,7 +11,7 @@ const ResumeLayout = () => {
   return (
     <div className='container'>
       <header>
-        <img src='/images/avatar.webp' alt='Mi' className='avatar' />
+        <img src='/images/avatar_2.webp' alt='Mi' className='avatar' />
         <h1>
           Mila Ziabchenko
           <br />
